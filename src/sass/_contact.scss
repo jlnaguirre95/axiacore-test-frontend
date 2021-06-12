@@ -1,0 +1,40 @@
+.contact {
+    background-color: $dark-color;
+    color: $light-color;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    &__container {
+        .contact__options {
+            display: flex;
+            justify-content: space-between;
+
+            .contact__item {
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                font-weight: 700;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .icon {
+                    background-color: $light-color;
+                    border-radius: 9999px;
+                    padding: 2rem;
+                    margin-bottom: 1rem;
+
+                    img {
+                        @include icon(3rem);
+                    }
+                }
+            }
+        }
+    }
+}

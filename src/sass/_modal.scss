@@ -1,0 +1,94 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($dark-color, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+
+    &__box {
+        width: 37.5rem;
+        background-color: $light-color;
+        position: relative;
+        animation: inFromDown 400ms ease;
+
+        .filters {
+            padding: 1.5rem;
+
+            h3 {
+                font-size: 2rem;
+                border-bottom: 1px solid #e5e5e5;
+                padding-bottom: 1rem;
+            }
+
+            ul {
+                .filter-item {
+                    border-bottom: 1px solid #e5e5e5;
+
+                    label {
+                        font-size: 1.4rem;
+                        color: #101111;
+                        padding: 1rem 0;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+
+        .buttons {
+            background-color: $light-gray-color;
+            padding: 1.5rem;
+            display: flex;
+
+            button {
+                padding: 1rem 2rem;
+                display: flex;
+            }
+
+            .clean-btn {
+                flex: 1;
+                margin-right: 1rem;
+                @include btn($light-color, $dark-color);
+                border: 1px solid #e5e5e5;
+
+                &:disabled {
+                    background-color: #E5E5E5;
+                    color: #101111;
+                }
+            }
+
+            .filter-modal-btn {
+                flex: 1;
+                @include btn($accent-blue-color, $light-color);
+
+                img {
+                    @include icon(1rem);
+                    margin-left: 1rem;
+                }
+            }
+        }
+
+        .close-btn {
+            background-color: $light-color;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            position: absolute;
+            top: -2rem;
+            right: 1.5rem;
+        }
+    }
+}
+
+@keyframes inFromDown {
+    from {
+        transform: translateY(500px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
